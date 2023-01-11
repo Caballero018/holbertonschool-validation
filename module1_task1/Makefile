@@ -1,7 +1,7 @@
-Build:
+build:
 	hugo --destination ./dest
-Clean:
+clean:
 	rm -rf ./dest
-Post:
+post:
 	hugo new posts/$(POST_NAME).md
 	sed 's/title:/title: '$('POST_TITLE')' posts/$(POST_NAME).md

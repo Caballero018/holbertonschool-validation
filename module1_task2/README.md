@@ -2,8 +2,8 @@
 ## Hugo
 ### Prerequisites 
 Before you begin this tutorial you must:
-* Install Hugo (the extended edition)
-* Install Git
+* <a href="https://gohugo.io/installation/">Install Hugo (the extended edition)</a>
+* <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git</a>
 ## Makefile
 ### Build:
 Generate the website from the markdown and configuration files in the directory dist/.

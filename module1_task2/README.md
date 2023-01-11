@@ -65,8 +65,21 @@ Before you begin this tutorial you must:
     hugo server -D
 ```
 ### Configure the site
-
+1. With your editor, open the site configuration file (config.toml) in the root of your project.
 ```
+    baseURL = 'http://example.org/'
+    languageCode = 'en-us'
+    title = 'My New Hugo Site'
+    theme = 'ananke'
+```
+2. Make the following changes:
+    * Set the **baseURL** for your production site. This value must begin with the protocol and end with a slash, as shown above.
+    * Set the **languageCode** to your language and region.
+    * Set the **title** for your production site.
+
+    Start Hugo’s development server to see your changes, remembering to include draft content.
+```
+    hugo server -D
 ```
 ### Publish the site
 

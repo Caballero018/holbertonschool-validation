@@ -1,5 +1,5 @@
 build:
-	hugo -destination dest
+	hugo --destination dist
 clean:
 	rm -rf ./dest
 post:

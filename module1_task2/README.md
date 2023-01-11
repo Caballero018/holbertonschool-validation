@@ -1,6 +1,9 @@
 # Requirements to build the website
 ## Hugo
-    Etc
+### Prerequisites 
+Before you begin this tutorial you must:
+* Install Hugo (the extended edition)
+* Install Git
 ## Makefile
 ### Build:
 Generate the website from the markdown and configuration files in the directory dist/.

@@ -6,7 +6,7 @@ Before you begin this tutorial you must:
 * <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git</a>
 
 ### Create a site
-Create the directory structure for your project in the --name-directory-- directory.
+Create the directory structure for your project in the **name-directory** directory.
 ### Add content
 ### Configure the site
 ### Publish the site

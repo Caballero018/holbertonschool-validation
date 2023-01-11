@@ -45,6 +45,7 @@ Before you begin this tutorial you must:
     ---
 ```
 3. Notice the draft value in the front matter is true. By default, Hugo does not publish draft content when you build the site. Learn more about draft, future, and expired content.
+    
     Add some markdown to the body of the post, but do not change the draft value.
 ```
     ---

@@ -6,27 +6,27 @@ Before you begin this tutorial you must:
 * <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git</a>
 
 ### Create a site
-* Create the directory structure for your project in the "**name-directory**" directory.
+1. Create the directory structure for your project in the "**name-directory**" directory.
 ```
     hugo new site name-directory
 ```
-* Change the current directory to the root of your project.
+2. Change the current directory to the root of your project.
 ```
     cd name-directory
 ```
-* Initialize an empty Git repository in the current directory.
+3. Initialize an empty Git repository in the current directory.
 ```
     git init
 ```
-* Clone the Ananke theme into the themes directory, adding it to your project as a Git submodule.
+4. Clone the Ananke theme into the themes directory, adding it to your project as a Git submodule.
 ```
     git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
 ```
-* Append a line to the site configuration file, indicating the current theme.
+5. Append a line to the site configuration file, indicating the current theme.
 ```
     echo "theme = 'ananke'" >> config.toml
 ```
-* Start Hugo’s development server to view the site.
+6. Start Hugo’s development server to view the site.
 ```
     hugo server
 ```

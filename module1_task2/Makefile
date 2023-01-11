@@ -1,6 +1,6 @@
 build:
 	hugo --destination dist
-clean: # Cleanup the content of the directory dist/
+clean: ## Cleanup the content of the directory dist/
 	rm -rf ./dist
 post:
 	rm -rf content/posts/$(POST_NAME).md

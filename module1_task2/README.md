@@ -16,8 +16,8 @@ Cleanup the content of the directory dist/
 Create a new blog post whose filename and title come from the environment variables POST_TITLE
 ```
     rm -rf content/posts/$(POST_NAME).md
-	hugo new posts/$(POST_NAME).md
-	sed -i 's/title*/title: "$(POST_TITLE)"/g' content/posts/$(POST_NAME).md
+hugo new posts/$(POST_NAME).md
+sed -i 's/title*/title: "$(POST_TITLE)"/g' content/posts/$(POST_NAME).md
 ```
 ### help:
 Print Readme file of current directory.

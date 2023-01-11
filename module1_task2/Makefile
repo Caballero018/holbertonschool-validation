@@ -8,4 +8,3 @@ post:	## Create a new blog post whose filename and title come from the environme
 	sed -i 's/title*/title: "$(POST_TITLE)"/g' content/posts/$(POST_NAME).md
 help:	## Print instructions for create a web site.
 	cat README.md
-	

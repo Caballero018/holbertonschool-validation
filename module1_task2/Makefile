@@ -7,4 +7,4 @@ post: ## Create a new blog post whose filename and title come from the environme
 	hugo new posts/$(POST_NAME).md
 	sed -i 's/title*/title: "$(POST_TITLE)"/g' content/posts/$(POST_NAME).md
 help: ## Print Readme file of current directory.
-	cat README.md
+	cat ./README.md

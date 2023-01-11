@@ -32,13 +32,43 @@ Before you begin this tutorial you must:
 ```
 
 ### Add content
+1. Add a new page to your site.
+```
+    hugo new posts/file-markdown.md
+```
+2. Hugo created the file in the content/posts directory. Open the file with your editor.
+```
+    ---
+    title: "My First Post"
+    date: 2022-11-20T09:03:20-08:00
+    draft: true
+    ---
+```
+3. Notice the draft value in the front matter is true. By default, Hugo does not publish draft content when you build the site. Learn more about draft, future, and expired content.
+    Add some markdown to the body of the post, but do not change the draft value.
+```
+    ---
+    title: "My First Post"
+    date: 2022-11-20T09:03:20-08:00
+    draft: true
+    ---
+    ## Introduction
+
+    This is **bold** text, and this is *emphasized* text.
+
+    Visit the [Hugo](https://gohugo.io) website!
+```
+4. Save the file, then start Hugo’s development server to view the site. You can run either of the following commands to include draft content.
+```
+    hugo server --buildDrafts
+    hugo server -D
+```
+### Configure the site
 
 ```
 ```
-### Configure the site
-```
-```
 ### Publish the site
+
 ```
 ```
 

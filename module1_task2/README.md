@@ -120,3 +120,6 @@ Print Readme file of current directory.
 ```
     cat README.md
 ```
+
+## References
+<a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme</a>

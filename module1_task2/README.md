@@ -65,7 +65,7 @@ Before you begin this tutorial you must:
     hugo server -D
 ```
 ### Configure the site
-1. With your editor, open the site configuration file (config.toml) in the root of your project.
+1. With your editor, open the <a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content">site configuration</a> file (config.toml) in the root of your project.
 ```
     baseURL = 'http://example.org/'
     languageCode = 'en-us'
@@ -82,8 +82,14 @@ Before you begin this tutorial you must:
     hugo server -D
 ```
 ### Publish the site
+In this step you will publish your site, but you will not deploy it.
+
+When you publish your site, Hugo creates the entire static site in the public directory in the root of your project. This includes the HTML files, and assets such as images, CSS files, and JavaScript files.
+
+When you publish your site, you typically do not want to include <a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content">draft, future, or expired content</a>. The command is simple.
 
 ```
+    hugo
 ```
 
 ## Lifecycle

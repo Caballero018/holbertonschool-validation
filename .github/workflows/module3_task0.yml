@@ -1,4 +1,4 @@
-name: module3_task0.yml
+name: module3_task0
 on:
   push:
   schedule:

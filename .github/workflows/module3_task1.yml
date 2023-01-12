@@ -1,4 +1,4 @@
-name: module3_task0
+name: module3_task1
 on:
   push:
   schedule:

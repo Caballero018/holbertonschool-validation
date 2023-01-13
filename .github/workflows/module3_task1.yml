@@ -5,7 +5,7 @@ on:
     - cron: '10 10 * * *'
 jobs:
   building:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
       - run: cd module3_task0 && make help

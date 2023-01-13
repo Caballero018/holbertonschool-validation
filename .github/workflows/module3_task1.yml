@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: cd module3_task0 && make help
       - run: ./setup.sh
-        uses: "132da97f77ddc534ddb931a461d83ac2aa601dd4481360c874eac33b6c3470d9"
+        uses: 132da97f77ddc534ddb931a461d83ac2aa601dd4481360c874eac33b6c3470d9
       - run: make build
       - run: make POST_NAME=who-are-we POST_TITLE="Who are we" post
       - run: make clean

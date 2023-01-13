@@ -122,18 +122,5 @@ Print Readme file of current directory.
     cat README.md
     ```
 
-## Create a Workflow
-### Steps:
-1. Under your repository name, click <img src="https://cdn-icons-png.flaticon.com/512/3007/3007728.png" width="16" height="16"/> Actions.
-![image](https://user-images.githubusercontent.com/106556798/212203598-23e7e529-117b-4342-90ec-951e7e23a04b.png)
-
-2. Click in **set up a workflow yourself**
-![image](https://user-images.githubusercontent.com/106556798/212203340-dd501a61-d07c-45ee-8e36-6252b7dc5099.png)
-
-3. Choose the name you want for the **'.yml'** file
-
-
-
 ## References
 <a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme</a>
-

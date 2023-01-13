@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
-      - run: sudo apt-get update && wsl --install -d Ubuntu 20.04
+      - run: apt-get update && apt upgrade
       - run: cd module3_task0 && make help
       - run: make build
       - run: make POST_NAME=who-are-we POST_TITLE="Who are we" post

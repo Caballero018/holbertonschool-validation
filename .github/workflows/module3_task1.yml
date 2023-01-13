@@ -13,4 +13,4 @@ jobs:
       - run: make build
       - run: make POST_NAME=who-are-we POST_TITLE="Who are we" post
       - run: make clean
-      - run: make build
+      - run: make help

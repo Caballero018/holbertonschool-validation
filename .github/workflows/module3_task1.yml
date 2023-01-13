@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: cd module3_task0 && make help
+      - run: docker pull ubuntu:18.04 && ./setup.sh
       - run: make build
       - run: make POST_NAME=who-are-we POST_TITLE="Who are we" post
       - run: make clean
       - run: make help
-      - run: ./setup.sh

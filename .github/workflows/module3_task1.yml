@@ -7,8 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v3
       - run: sudo apt-get update && sudo apt-get upgrade
+      - uses: actions/checkout@v3
       - run: cd module3_task0 && make help
       - run: make build
       - run: make POST_NAME=who-are-we POST_TITLE="Who are we" post

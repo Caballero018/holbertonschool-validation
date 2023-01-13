@@ -6,9 +6,8 @@ on:
 jobs:
   building:
     runs-on: ubuntu-18.04
-    services:
-      postgres:
-        image: postgres:latest
+    postgres:
+      image: postgres:latest
     steps:
       - uses: actions/checkout@v3
       - run: cd module3_task0

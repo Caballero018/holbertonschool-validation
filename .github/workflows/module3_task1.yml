@@ -4,10 +4,9 @@ on:
   schedule:
     - cron: '10 10 * * *'
 jobs:
-  building:
-    runs-on: ubuntu-18.04
-    postgres:
-      image: postgres:latest
+  build:
+    runs-on: ubuntu-latest
+    enviroment: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
       - run: cd module3_task0

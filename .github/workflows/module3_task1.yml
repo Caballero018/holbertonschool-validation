@@ -2,7 +2,7 @@ name: module3_task1
 on:
   push:
     branches: 
-      - main
+      - master
   schedule:
     - cron: '10 10 * * *'
 jobs:

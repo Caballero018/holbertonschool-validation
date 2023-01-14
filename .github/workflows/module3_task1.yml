@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: cd module3_task1 && make help
-      - run: module3_task1/setup.sh
+      - run: sudo module3_task1/setup.sh
       - run: cd module3_task1 && make build
       - run: cd module3_task1 && make POST_NAME=who-are-we POST_TITLE="Who are we" post
       - run: cd module3_task1 && make clean

@@ -1,17 +1,17 @@
 name: module3_task1
 on:
   push:
-    branches: 
-      - master
+    branches: master
   schedule:
     - cron: '10 10 * * *'
 jobs:
-  build-1:
+  build:
     runs-on: ubuntu-18.04
     steps:
+      - run: sudo apt-get update && sudo apt full-upgrade
       - uses: actions/checkout@v3
-      - run: module3_task1/setup.sh
-      - run: cd module3_task1 && make help
-      - run: cd module3_task1 && make build
-      - run: cd module3_task1 && make POST_NAME=who-are-we POST_TITLE="Who are we" post
-      - run: cd module3_task1 && make clean
+      - run: cd module3_task0 && make help
+      - run: make build
+      - run: make POST_NAME=who-are-we POST_TITLE="Who are we" post
+      - run: make clean
+      - run: ./setup.sh

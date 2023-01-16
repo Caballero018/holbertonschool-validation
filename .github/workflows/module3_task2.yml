@@ -1,0 +1,21 @@
+name: module3_task2
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '10 0 * * *'
+jobs:
+  module3_task1:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+      - run: sudo module3_task2/setup.sh
+      - run: cd module3_task1 && make help
+      - run: cd module3_task1 && make build
+      - run: cd module3_task1 && make post POST_NAME="name" PORT_TITLE="title"
+      - run: cd module3_task2 && make unit-tests
+      - run: cd module3_task2 && make integration-tests
+      - run: cd module3_task2 && make validate
+      - run: cd module3_task2 && make package
+      - run: cd module3_task2 && npm install -g markdownlint-cli && make lint

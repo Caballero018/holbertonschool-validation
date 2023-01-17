@@ -18,4 +18,4 @@ jobs:
       - run: cd module3_task2 && make integration-tests
       - run: cd module3_task2 && make validate
       - run: cd module3_task2 && make package
-      - run: cd module3_task2 && sudo npm install -g markdownlint-cli && make lint
+      - run: cd module3_task2 && npm install -g markdownlint-cli && make lint

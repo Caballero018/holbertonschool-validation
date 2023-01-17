@@ -1,6 +1,8 @@
 # Requirements to build the website
+
 ## Hugo
-### Prerequisites 
+
+### Prerequisites
 Before you begin this tutorial you must:
 * <a href="https://gohugo.io/installation/">Install Hugo (the extended edition)</a>
 * <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git</a>
@@ -36,6 +38,7 @@ Before you begin this tutorial you must:
     ```
     hugo new posts/file-markdown.md
     ```
+
 2. Hugo created the file in the content/posts directory. Open the file with your editor.
     ```
     ---
@@ -44,8 +47,9 @@ Before you begin this tutorial you must:
     draft: true
     ---
     ```
+
 3. Notice the draft value in the front matter is true. By default, Hugo does not publish draft content when you build the site. Learn more about draft, future, and expired content.
-    
+
     Add some markdown to the body of the post, but do not change the draft value.
     ```
     ---
@@ -59,11 +63,13 @@ Before you begin this tutorial you must:
 
     Visit the [Hugo](https://gohugo.io) website!
     ```
+
 4. Save the file, then start Hugo’s development server to view the site. You can run either of the following commands to include draft content.
     ```
     hugo server --buildDrafts
     hugo server -D
     ```
+
 ### Configure the site
 1. With your editor, open the <a href="https://gohugo.io/getting-started/usage/#draft-future-and-expired-content">site configuration</a> file (config.toml) in the root of your project.
     ```
@@ -81,6 +87,7 @@ Before you begin this tutorial you must:
     ```
     hugo server -D
     ```
+
 ### Publish the site
 In this step you will publish your site, but you will not deploy it.
 
@@ -99,16 +106,19 @@ Post: Create a new blog post whose filename and title come from the environment 
 help: Print instructions for create a web site.
 
 ## Makefile
+
 ### build:
 Generate the website from the markdown and configuration files in the directory dist/.
     ```
     hugo --destination dist
     ```
+
 ### clean:
 Cleanup the content of the directory dist/
     ```
     rm -rf ./dist
     ```
+
 ### post:
 Create a new blog post whose filename and title come from the environment variables POST_TITLE
     ```
@@ -116,6 +126,7 @@ Create a new blog post whose filename and title come from the environment variab
     hugo new posts/$(POST_NAME).md
     sed -i 's/title*/title: "$(POST_TITLE)"/g' content/posts/$(POST_NAME).md
     ```
+
 ### help:
 Print Readme file of current directory.
     ```
@@ -132,8 +143,6 @@ Print Readme file of current directory.
 
 3. Choose the name you want for the **'.yml'** file
 
-
-
 ## References
-<a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme</a>
 
+<a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme</a>

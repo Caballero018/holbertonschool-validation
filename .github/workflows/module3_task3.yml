@@ -11,14 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo module3_task2/setup.sh
-      - run: cd module3_task1 && make help
-      - run: cd module3_task1 && make build
-      - run: cd module3_task1 && make post POST_NAME="name" PORT_TITLE="title"
-      - run: cd module3_task2 && make unit-tests
-      - run: cd module3_task2 && make integration-tests
-      - run: cd module3_task2 && make validate
-      - run: cd module3_task2 && npm install -g markdownlint-cli && make lint
-      - run: cd module3_task2 && make package
+      - run: cd module3_task3 && make help
+      - run: cd module3_task3 && make build
+      - run: cd module3_task3 && make post POST_NAME="name" PORT_TITLE="title"
+      - run: cd module3_task3 && make unit-tests
+      - run: cd module3_task3 && make integration-tests
+      - run: cd module3_task3 && make validate
+      - run: cd module3_task3 && npm install -g markdownlint-cli && make lint
+      - run: cd module3_task3 && make package
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')

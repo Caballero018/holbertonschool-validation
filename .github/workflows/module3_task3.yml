@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
-      - run: sudo npm install -g markdownlint-cli && make lint
       - run: sudo module3_task2/setup.sh
       - run: cd module3_task3 && make help
       - run: cd module3_task3 && make build
@@ -16,6 +15,7 @@ jobs:
       - run: cd module3_task3 && make unit-tests
       - run: cd module3_task3 && make integration-tests
       - run: cd module3_task3 && make validate
+      - run: cd module3_task3 && npm install -g markdownlint-cli && make lint
       - run: cd module3_task3 && make package
       - run: cd module3_task3 && make clean
       - name: Release

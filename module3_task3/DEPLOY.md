@@ -19,3 +19,7 @@ files in the directory dist/.*)
 
 * To verify that the application is running correctly run the command: hugo server
 * Then verify the status of the website in your localhost by clicking.
+
+## tag
+
+* A tag whose name starts with 1.0.0

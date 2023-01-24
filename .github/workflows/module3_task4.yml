@@ -5,9 +5,6 @@ on:
       - main
   schedule:
     - cron: '10 0 * * *'
-  pull_request:
-    type:
-      - opened
 jobs:
   module3_task4:
     runs-on: ubuntu-18.04
@@ -27,7 +24,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/1.0.0')
         with:
           files: |
-            module3_task3/awesome-website.zip
-            module3_task3/DEPLOY.md
+            module3_task4/awesome-website.zip
+            module3_task4/DEPLOY.md
           body_path:
-            module3_task3/DEPLOY.md
+            module3_task4/DEPLOY.md

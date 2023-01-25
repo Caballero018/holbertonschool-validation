@@ -1,5 +1,4 @@
 go-build:
-	docker run -d golang:1.15.8-buster go mod init github.com/Caballero018/awesome-api
 	docker run -d golang:1.15.8-buster go get github.com/gorilla/mux
 	docker run -d golang:1.15.8-buster go build
 

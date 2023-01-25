@@ -1,6 +1,7 @@
 go-build:
-	docker run -d golang:1.15.8-buster go get github.com/gorilla/mux
-	docker run -d golang:1.15.8-buster go build
+	docker run --rm --volume=$(pwd):/app --workdir=/app golang:1.15.8-buster /bin/bash -c
+	"pwd && ls && go mod init github.com/Caballero018/awesome-api && go get github.com/gorilla/mux
+	&& golang:1.15.8-buster go build"
 
 hugo-build:	## Generate the website from the markdown and configuration files in the directory dist/.
 	hugo --destination dist

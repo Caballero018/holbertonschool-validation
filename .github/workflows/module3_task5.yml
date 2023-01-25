@@ -64,6 +64,8 @@ jobs:
           publish-dir: 'module3_task5/dist'
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "🚀 Deployed on"
+          publish-message: "🎉 Published on"
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: true

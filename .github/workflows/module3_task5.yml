@@ -1,5 +1,5 @@
 ---
-name: module3_task4
+name: module3_task5
 on:
   push:
     branches:
@@ -24,21 +24,21 @@ jobs:
         with:
           node-version: 16
       - run: |
-          cd module3_task4/
+          cd module3_task5/
           sudo ./setup.sh
       - name: install markdown
         run: npm install -g markdownlint-cli
 
-      - run: cd module3_task4 && make help
-      - run: cd module3_task4 && make build
-      - run: cd module3_task4 && make clean
-      - run: cd module3_task4 && make build
-      - run: cd module3_task4 && make post POST_NAME="name" POST_TITLE="title"
-      - run: cd module3_task4 && make lint
-      - run: cd module3_task4 && make package
-      - run: cd module3_task4 && make unit-tests
-      - run: cd module3_task4 && make integration-tests
-      - run: cd module3_task4 && make validate
+      - run: cd module3_task5 && make help
+      - run: cd module3_task5 && make build
+      - run: cd module3_task5 && make clean
+      - run: cd module3_task5 && make build
+      - run: cd module3_task5 && make post POST_NAME="name" POST_TITLE="title"
+      - run: cd module3_task5 && make lint
+      - run: cd module3_task5 && make package
+      - run: cd module3_task5 && make unit-tests
+      - run: cd module3_task5 && make integration-tests
+      - run: cd module3_task5 && make validate
       - name: Checkout
         uses: actions/checkout@v3
       - name: Release

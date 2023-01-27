@@ -4,9 +4,9 @@
 go and make installed
 
 ## Lifecycle
-go-build: Builds the API binary.
-hugo-build: Builds a website.
-build:   Website.
+go-build: Builds the API binary file using go
+hugo-build: Builds a website using gohugo on the dist folder
+build:   Builds all that is needed for website
 post: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME
 check:   Lints and check for dead links on markdowns using markdownlint-cli and markdown-link-check
 validate:  Validates dist/index.html using W3C Hbtn validator

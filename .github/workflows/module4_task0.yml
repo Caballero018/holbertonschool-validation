@@ -1,72 +1,56 @@
----
 name: module4_task0
 on:
   push:
     branches:
       - main
     tags:
-      - "1.0.1"
+      - 1.0.0
   schedule:
     - cron: '0 0 * * *'
   pull_request:
-    types: [opened, reopened, synchronize]
-
-permissions: read-all
-
+    types:
+      - opened
 jobs:
-  builds:
-    name: jobs
+  module4_task0:
     runs-on: ubuntu-18.04
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out repository code
+        uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: |
-          cd module4_task0/
+          npm install -g markdownlint-cli markdown-link-check
+          cd module4_task0
           sudo ./setup.sh
-      - name: install markdown
-        run: npm install -g markdownlint-cli
-
-      - run: cd module4_task0 && make help
-      - run: cd module4_task0 && make build
-      - run: cd module4_task0 && make clean
-      - run: cd module4_task0 && make build
-      - run: cd module4_task0 && make post POST_NAME="name" POST_TITLE="title"
-      - run: cd module4_task0 && make lint
-      - run: cd module4_task0 && make package
-      - run: cd module4_task0 && make unit-tests
-      - run: cd module4_task0 && make integration-tests
-      - run: cd module4_task0 && make validate
-      - name: Checkout
-        uses: actions/checkout@v3
+          make build
+          make help
+          make validate
+          make test
+          make package
+          make lint
+      - name: Archive generated zip
+        uses: actions/upload-artifact@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          name: awesome-website
+          path: module4_task0/awesome-website.zip
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/1.0.0')
+        if: startsWith(github.ref, 'refs/tags/')
         with:
+          body_path: module4_task0/DEPLOY.md
           files: |
-            awesome-website.zip
-            DEPLOY.md
-          body: |
-            ## What is in the archive and how to unarchive it?
-            ## What are the commands to start and stop the application?
-            ## How to customize where the application logs are written?
-            ## How to “quickly” verify that the application is running?
-            ## Create a release with the archive triggered by a tag
-      - run: gh release create v1.0.0 --title "v1.0.0" \
-          --notes DEPLOY.md 2>/dev/null || echo "OK"
-      - name: Release Drafter
-        uses: release-drafter/release-drafter@v5.21.1
-      - name: Deploy to Netlify
+            module4_task0/awesome-website.zip
+      - name: deploy
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: 'module4_task0/dist'
+          publish-dir: './module4_task0/dist'
           production-branch: main
+          production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "🚀 Deployed on"
-          publish-message: "🎉 Published on"
-          enable-pull-request-comment: false
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:

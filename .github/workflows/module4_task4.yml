@@ -1,0 +1,44 @@
+name: module4_task4
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 1.0.0
+  schedule:
+    - cron: '0 0 * * *'
+  pull_request:
+    types:
+      - opened
+jobs:
+  module4_task4:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        # yamllint disable rule:line-length
+      - run: |
+          curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 && chmod +x container-structure-test-linux-amd64 && mkdir -p $HOME/bin && export PATH=$PATH:$HOME/bin && mv container-structure-test-linux-amd64 $HOME/bin/container-structure-test
+          cd module4_task4
+          make package
+          make docker-tests
+      - name: Archive generated zip
+        uses: actions/upload-artifact@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          name: awesome-website
+          path: module4_task4/awesome-website.zip
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: module4_task4/DEPLOY.md
+          files: |
+            module4_task4/awesome-website.zip
+      - name: Deploy to heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "awesome-website"
+          heroku_email: "alejoxcaballero18@gmail.com"
+          usedocker: true

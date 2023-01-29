@@ -1,0 +1,9 @@
+---
+schemaVersion: 2.0.0
+commandTests:
+  - name: "Present files"
+    command: "ls"
+    args: ["/app"]
+    expectedOutput: ["awesome-api", "dist"]
+metadataTest:
+  entrypoint: ["/app/awesome-api"]

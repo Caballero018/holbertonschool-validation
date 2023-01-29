@@ -1,0 +1,7 @@
+---
+schemaVersion: 2.0.0
+commandTests:
+  - name: "hugo installed"
+    command: "which"
+    args: ["hugo"]
+    expectedOutput: ["/usr/local/bin/hugo"]
